@@ -1,23 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import * as faker from 'faker';
-
 @Injectable({
   providedIn: 'root'
 })
 export class FakerService {
-  user: any;
   constructor(public http: HttpClient) {
-    const user = {
-      name: faker.name.findName(),
-      email: faker.internet.email(),
-      address: faker.address.streetAddress(),
-      bio: faker.lorem.sentence(),
-      image: faker.image.avatar()
-    };
+    console.log('Service constructor...');
   }
-  getData(): Observable<any> {
-    return this.http.get(`http://faker.hook.io?property=${helpers.userCard}`);
+  getUsers(): Observable<any> {
+   return this.http.get(`https://jsonplaceholder.typicode.com/posts`);
   }
   }

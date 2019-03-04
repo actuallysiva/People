@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FakerService } from '../faker.service';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { getMaxListeners } from 'cluster';
-import * as faker from 'faker';
-import { userInfo } from 'os';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

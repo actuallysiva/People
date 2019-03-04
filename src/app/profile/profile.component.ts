@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FakerService } from '../faker.service';
+import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
+
 import * as faker from 'faker';
 
 @Component({
@@ -8,26 +10,31 @@ import * as faker from 'faker';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-userDetails: any;
+  userDetails: any;
+
+
   constructor(public http: FakerService) { }
 
   ngOnInit() {
-    const user = {
-      name: faker.helpers.userCard(),
-      email: faker.internet.email(),
-      address: faker.address.streetAddress(),
-      bio: faker.lorem.sentence(),
-      image: faker.image.avatar()
-    };
+    this.userInfo();
   }
-  userInfo() {
-    this.http.getData().subscribe( data => {
-      if (data.Ressponse === true) {
-        this.userDetails = data;
-        console.log(this.userDetails);
-      }
 
+  userInfo() {
+    this.http.getUsers().subscribe( data => {
+      this.userDetails = data;
+      console.log(this.userDetails);
+      console.log(this.userDetails.length);
+    },
+    err => {
+      console.log(err);
     });
+  }
+  onScroll() {
+    console.log('scrolled');
+    const last = this.userDetails[this.userDetails.length - 1];
+    for (let i = 0; i <= 10; i++) {
+      this.userDetails.push(last + i);
+    }
   }
 
 }

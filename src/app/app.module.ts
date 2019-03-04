@@ -2,9 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // importing manually
+import { CommonModule } from '@angular/common';
 import { FakerService } from './faker.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +27,8 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    InfiniteScrollModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
@@ -31,3 +37,4 @@ import { ProfileComponent } from './profile/profile.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
