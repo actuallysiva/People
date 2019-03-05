@@ -6,10 +6,28 @@
     border-left: 5px solid #a94442; /* red */
   }
 
-  .fieldset {
-    border: thin solid #ccc; 
-    border-radius: 4px;
-    padding: 20px;
-    padding-left: 40px;
-    background: #fbfbfb;
-}
+/* CSS used here will be applied after bootstrap.css */
+
+body { 
+  background: url('/../assets/bg.png') no-repeat center center fixed; 
+  background-size: cover;
+  height: 100vh;
+ }
+
+ #l {
+   padding: 30%;
+   font-size: 1.5em;
+ }
+ .panel-default {
+  opacity: 10;
+  margin-top:30px;
+  border: 2px thick solid;
+  border-radius: 5px;
+  padding: 0.5em;
+ }
+ .panel-body{
+   padding-top: 1.5em;
+ }
+ .form-group.last {
+  margin-bottom:0px;
+ }

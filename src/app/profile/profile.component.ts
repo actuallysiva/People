@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
   onScroll() {
     console.log('scrolled');
     const last = this.userDetails[this.userDetails.length - 1];
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 0; i <= 100; i++) {
       this.userDetails.push(last + i);
     }
   }
