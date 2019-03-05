@@ -9,9 +9,11 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   isValidFormSubmitted = null;
   validateEmail = true;
+  emailPattern = 'admin@admin.com';
+  passwordPattern = 'admin';
   loginForm = this.formBuilder.group({
-    email: ['', Validators.required, Validators.pattern('admin@admin.com')],
-    password: ['', Validators.required, Validators.pattern('admin')]
+    email: ['', Validators.required, Validators.pattern(this.emailPattern)],
+    password: ['', Validators.required, Validators.pattern(this.passwordPattern)]
   });
   user = {
     email: 'admin@admin.com',
