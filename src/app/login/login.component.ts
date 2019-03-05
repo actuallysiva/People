@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
     email: ['', Validators.required, Validators.pattern(this.emailPattern)],
     password: ['', Validators.required, Validators.pattern(this.passwordPattern)]
   });
-    email =  'admin@admin.com';
-    password = 'admin';
+    email: string;
+    password: string;
   constructor(private formBuilder: FormBuilder, public router: Router) {
   }
   ngOnInit() {
