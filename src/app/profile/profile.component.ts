@@ -11,11 +11,12 @@ import * as faker from 'faker';
 })
 export class ProfileComponent implements OnInit {
   public userDetails: any;
-  data: any = {};
+  public data: any = {};
   public finalData: any;
   private noOfItemsToShowInitially = 5;
   public isFullListDisplayed = false;
   private itemsToLoad = 5;
+  public sorted;
   constructor() { }
   ngOnInit() {
     const generator = (schema, min = 1, max) => {
@@ -40,6 +41,9 @@ export class ProfileComponent implements OnInit {
 
     const data = generator(user, 20, 20);
     this.finalData = data;
+    this.sorted = this.finalData.sort((d1, d2) => new Date(d1.date).getTime() - new Date(d2.date).getTime() );
+
+    console.log(this.sorted);
     this.userDetails = data.slice(0, this.noOfItemsToShowInitially);
     console.log(this.userDetails.length);
   }
