@@ -6,18 +6,33 @@
 [infiniteScrollDistance]="2"
 [infiniteScrollThrottle]="50"
 [infiniteScrollDisabled]="isFullListDisplayed"
-
 (scrolled)="onScrollDown()"
 >
 <div class="container"> 
 
     <div class="row">
         
-        <div class="col-sm-4">
+        <div class="col-4">
+                <div class="card" style="width: 25rem; height: 40em;">
+                        <img class="card-img-top" src="./../../assets/prof.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Jane Doe</h5>
+                          <p class="card-text">Est itaque omnis omnis non beatae ea. Earum accusantium ratione quisquam. Asperiores quas doloremque. At atque distinctio ipsa in nulla consectetur sunt provident qui.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                        <div class="card-body"><br>
+                          <a href="#" class="card-link">Likes(test)</a>
+                          <a href="#" class="card-link">Comment(test)</a>
+                        </div>
+                    </div>
 
         </div>
         
-    <div class="col-sm-8" *ngFor="let item of userDetails">
+    <div class="col-8" *ngFor="let item of userDetails">
         <div class="panel panel-white post panel-shadow">
             <div class="post-heading">
                 <div class="pull-left image">

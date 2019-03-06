@@ -12,7 +12,7 @@ import * as faker from 'faker';
 export class ProfileComponent implements OnInit {
   public userDetails: any;
   data: any = {};
-  finalData: any;
+  public finalData: any;
   private noOfItemsToShowInitially = 5;
   public isFullListDisplayed = false;
   private itemsToLoad = 5;
@@ -39,17 +39,18 @@ export class ProfileComponent implements OnInit {
     };
 
     const data = generator(user, 20, 20);
-    const finalData = data;
+    this.finalData = data;
     this.userDetails = data.slice(0, this.noOfItemsToShowInitially);
-    console.log(finalData);
     console.log(this.userDetails.length);
   }
 
   onScrollDown() {
-    if (this.noOfItemsToShowInitially <= this.data.length) {
+    console.log('scrolled');
+    console.log(this.noOfItemsToShowInitially);
+    if (this.noOfItemsToShowInitially <= 20) {
+      console.log('entered');
       this.noOfItemsToShowInitially += this.itemsToLoad;
-      this.userDetails = this.data.slice(0, this.noOfItemsToShowInitially);
-      console.log('scrolled');
+      this.userDetails = this.finalData.slice(0, this.noOfItemsToShowInitially);
     } else {
       this.isFullListDisplayed = true;
     }

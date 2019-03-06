@@ -4,6 +4,9 @@
     margin-left: 10em;
     height: 100%;
 }
+.card {
+  margin-top: 5em;
+}
 .panel-shadow {
     box-shadow: rgba(4, 74, 226, 0.3) 7px 7px 7px;
 }
