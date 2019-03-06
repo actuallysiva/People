@@ -1,26 +1,98 @@
-<div *ngFor="let user of userDetails">
-  <div class="container">
-    <div class="card-deck">
-    <div class="card text-center border-dark mb-3" style="max-width: 540px;" style="margin-top: 10px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="https://dummyimage.com/259x200/000/fff&text=Image" class="card-img" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{user.title  | uppercase}}</h5>
-              <p class="card-text">{{user.body}}</p>
-            </div>
-          </div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+<div class = "search-results" infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+[infiniteScrollDisabled]="isFullListDisplayed"
+
+(scrolled)="onScrollDown()"
+>
+<div class="container"> 
+
+    <div class="row">
+        
+        <div class="col-sm-4">
+
         </div>
-      </div>
+        
+    <div class="col-sm-8" *ngFor="let item of userDetails">
+        <div class="panel panel-white post panel-shadow">
+            <div class="post-heading">
+                <div class="pull-left image">
+                    <img src="{{item.image}}" class="img-circle avatar" alt="user profile image">
+                </div>
+                <div class="pull-left meta">
+                    <div class="title h5">
+                        <a href="#">{{item.name}}<b></b></a>
+                        made a post.
+                    </div>
+                    <h6 class="text-muted time">{{item.date}}</h6>
+                </div>
+            </div> 
+            <div class="post-description"> 
+                <p>{{item.desc}}</p>
+                <div class="stats">
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-thumbs-up icon"></i>{{item.likes}}
+                    </a>
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-share icon"></i>{{item.count}}
+                    </a>
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="input-group"> 
+                    <input class="form-control" placeholder="Add a comment" type="text">
+                    <span class="input-group-addon">
+                        <a href="#"><i class="fa fa-edit"></i></a>  
+                    </span>
+                </div>
+                <ul class="comments-list">
+                    <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="avatar" src="{{item.avatar2}}" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                                <h4 class="user">Gavino Free</h4>
+                                <h5 class="time">5 minutes ago</h5>
+                            </div>
+                            <p>{{item.comments}}</p>
+                        </div>
+                        <ul class="comments-list">
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="{{item.avatar3}}" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">Ryan Haywood</h4>
+                                        <h5 class="time">3 minutes ago</h5>
+                                    </div>
+                                    <p>{{item.comment2}}</p>
+                                </div>
+                            </li> 
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="{{item.image}}" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">{{item.name}}</h4>
+                                        <h5 class="time">3 minutes ago</h5>
+                                    </div>
+                                    <p>Ok, cool.</p>
+                                </div>
+                            </li> 
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-      <div
-  infiniteScroll
-  [infiniteScrollDistance]="2"
-  [infiniteScrollThrottle]="1000"
-  (scrolled)="onScroll()">
 </div>
 
-
+</div>
 </div>

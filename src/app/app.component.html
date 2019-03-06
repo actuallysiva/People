@@ -1,12 +1,26 @@
-<div>
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" [routerLink]="['/login']">
-                        <img src="./../assets/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                        People
-                      </a>
-              </nav>
-              <router-outlet></router-outlet>
-
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #3b5998;" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">People</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">Test1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">Test2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#">Test3</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="row">
+    <router-outlet></router-outlet>
 </div>
-
-

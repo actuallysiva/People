@@ -10,31 +10,49 @@ import * as faker from 'faker';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  userDetails: any;
-
-
-  constructor(public http: FakerService) { }
-
+  public userDetails: any;
+  data: any = {};
+  finalData: any;
+  private noOfItemsToShowInitially = 5;
+  public isFullListDisplayed = false;
+  private itemsToLoad = 5;
+  constructor() { }
   ngOnInit() {
-    this.userInfo();
+    const generator = (schema, min = 1, max) => {
+      max = max || min;
+      return Array.from({ length: faker.random.number({ min, max }) }).map(() => Object.keys(schema).reduce((entity, key) => {
+        entity[key] = faker.fake(schema[key]);
+        return entity;
+      }, {}));
+    };
+    const user = {
+      name: '{{name.firstName}} {{name.lastName}}',
+      image: '{{image.avatar}}',
+      date: '{{date.recent}}',
+      likes: '{{random.number}}',
+      count: '{{random.number}}',
+      comments: '{{lorem.sentence}}',
+      desc: '{{lorem.paragraph}}',
+      comment2: '{{lorem.sentence}}',
+      avatar2: '{{image.avatar}}',
+      avatar3: '{{image.avatar}}'
+    };
+
+    const data = generator(user, 20, 20);
+    const finalData = data;
+    this.userDetails = data.slice(0, this.noOfItemsToShowInitially);
+    console.log(finalData);
+    console.log(this.userDetails.length);
   }
 
-  userInfo() {
-    this.http.getUsers().subscribe( data => {
-      this.userDetails = data;
-      console.log(this.userDetails);
-      console.log(this.userDetails.length);
-    },
-    err => {
-      console.log(err);
-    });
-  }
-  onScroll() {
-    console.log('scrolled');
-    const last = this.userDetails[this.userDetails.length - 1];
-    for (let i = 0; i <= 100; i++) {
-      this.userDetails.push(last + i);
+  onScrollDown() {
+    if (this.noOfItemsToShowInitially <= this.data.length) {
+      this.noOfItemsToShowInitially += this.itemsToLoad;
+      this.userDetails = this.data.slice(0, this.noOfItemsToShowInitially);
+      console.log('scrolled');
+    } else {
+      this.isFullListDisplayed = true;
+    }
     }
   }
 
-}
