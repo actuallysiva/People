@@ -8,11 +8,10 @@
 [infiniteScrollDisabled]="isFullListDisplayed"
 (scrolled)="onScrollDown()"
 >
-<div class="container"> 
 
     <div class="row">
         
-        <div class="col-4">
+        <div class="col-sm-4">
                 <div class="card" style="width: 25rem; height: 40em;">
                         <img class="card-img-top" src="./../../assets/prof.png" alt="Card image cap">
                         <div class="card-body">
@@ -32,7 +31,7 @@
 
         </div>
         
-    <div class="col-8" *ngFor="let item of userDetails">
+    <div class="col-sm-8" *ngFor="let item of userDetails">
         <div class="panel panel-white post panel-shadow">
             <div class="post-heading">
                 <div class="pull-left image">
@@ -107,7 +106,6 @@
             </div>
         </div>
     </div>
-</div>
 
 </div>
 </div>

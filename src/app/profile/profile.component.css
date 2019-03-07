@@ -1,9 +1,4 @@
-.container {
-    border: 2px solid black;
-    margin-top: 3em;
-    margin-left: 10em;
-    height: 100%;
-}
+
 .card {
   margin-top: 5em;
 }
@@ -30,8 +25,8 @@
   padding: 20px 15px;
 }
 .post .post-heading .avatar {
-  width: 60px;
-  height: 60px;
+  width: 3.75em;
+  height: 3.75em;
   display: block;
   margin-right: 15px;
 }
@@ -45,7 +40,7 @@
   color: #aaaaaa;
 }
 .post .post-heading .meta .time {
-  padding: 0.8em;
+  padding: 1em;
   color: #999;
 }
 .post .post-image .image {
@@ -56,57 +51,57 @@
   padding: 3em;
 }
 .post .post-description p {
-  font-size: 14px;
+  font-size: 0.8em;
 }
 .post .post-description .stats {
-  margin-top: 20px;
+  margin-top: 1.25em;
 }
 .post .post-description .stats .stat-item {
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 0.93em;
 }
 .post .post-description .stats .stat-item .icon {
-  margin-right: 8px;
+  margin-right: 0.5em;
 }
 .post .post-footer {
   border-top: 1px solid #ddd;
-  padding: 15px;
+  padding: 0.93em;
 }
 .post .post-footer .input-group-addon a {
   color: #454545;
 }
 .post .post-footer .comments-list {
   padding: 0;
-  margin-top: 20px;
+  margin-top: 1.25em;
   list-style-type: none;
 }
 .post .post-footer .comments-list .comment {
   display: block;
   width: 100%;
-  margin: 20px 0;
+  margin: 1.25em 0;
 }
 .post .post-footer .comments-list .comment .avatar {
-  width: 35px;
-  height: 35px;
+  width: 2.1em;
+  height: 2.1em;
 }
 .post .post-footer .comments-list .comment .comment-heading {
   display: block;
   width: 100%;
 }
 .post .post-footer .comments-list .comment .comment-heading .user {
-  font-size: 14px;
+  font-size: 0.8em;
   font-weight: bold;
   display: inline;
-  margin-right: 10px;
+  margin-right: 0.6em;
 }
 .post .post-footer .comments-list .comment .comment-heading .time {
-  font-size: 12px;
+  font-size: 0.7em;
   color: #aaa;
   display: inline;
 }
 .post .post-footer .comments-list .comment .comment-body {
-  margin-left: 50px;
+  margin-left: 3.1em;
 }
 .post .post-footer .comments-list .comment > .comments-list {
-  margin-left: 50px;
+  margin-left: 3.1em;
 }
